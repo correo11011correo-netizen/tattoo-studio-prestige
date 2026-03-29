@@ -28,11 +28,11 @@
             <div class="logo-text">MELANIE</div>
         </div>
         <nav class="nav-links">
-            <a href="#filosofia">Melanie</a>
+            <a href="#filosofia">Sobre Mí</a>
             <a href="#galeria">Obras</a>
-            <a href="#flashes">Disponibles</a>
-            <a href="#cotizador">Cotizador Pro</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#instagram-hub">Comunidad</a>
+            <a href="#cotizador">Presupuesto</a>
+            <a href="#contacto">Citas</a>
         </nav>
     </header>
 
@@ -40,17 +40,17 @@
         <!-- HERO -->
         <section class="hero">
             <div class="tagline">Arte de Autor • Melanie</div>
-            <h1>Legado Inmortal</h1>
-            <a href="#galeria" class="booking-btn">Ver Colección Pro</a>
+            <h1>Legado y Piel</h1>
+            <a href="#galeria" class="booking-btn">Explorar Arte</a>
         </section>
 
         <!-- FILOSOFÍA -->
         <section class="section" id="filosofia">
             <div class="container">
-                <span class="sub-title">La Artista</span>
-                <h2 class="title">Melanie: Maestría y Visión.</h2>
+                <span class="sub-title">La Visión</span>
+                <h2 class="title">Melanie: Precisión Infinita.</h2>
                 <p class="desc">
-                    Especializada en piezas de alta complejidad, <b>Melanie</b> fusiona la anatomía humana con el arte eterno. Cada sesión es una experiencia personalizada en un entorno de máxima higiene y exclusividad.
+                    Especializada en piezas de alta complejidad, <b>Melanie</b> fusiona la anatomía humana con el arte eterno. Su estudio es un espacio de creación pura donde cada trazo cuenta una historia.
                 </p>
             </div>
         </section>
@@ -58,7 +58,7 @@
         <!-- GALERÍA -->
         <section class="section" id="galeria">
             <div class="section-header">
-                <h2>Obras Seleccionadas</h2>
+                <h2>Colección Seleccionada</h2>
                 <div class="filter-bar">
                     <button class="filter-btn active" data-filter="all">Todos</button>
                     <button class="filter-btn" data-filter="realismo">Realismo</button>
@@ -66,7 +66,31 @@
                     <button class="filter-btn" data-filter="fineline">Fine Line</button>
                 </div>
             </div>
-            <div class="gallery-grid" id="main-gallery" style="min-height: 500px;"></div>
+            <div class="gallery-grid" id="main-gallery"></div>
+        </section>
+
+        <!-- INSTAGRAM HUB (NUEVO SECTOR INTERACTIVO) -->
+        <section class="section" id="instagram-hub">
+            <div class="insta-container">
+                <div class="insta-profile-card">
+                    <div class="insta-header">
+                        <div class="insta-avatar">
+                            <img src="https://images.unsplash.com/photo-1594465919760-441fe5908ab0?w=150" alt="Melanie Profile">
+                        </div>
+                        <div class="insta-meta">
+                            <h3>melanieetattoo</h3>
+                            <div class="insta-stats">
+                                <span><b>1.2k</b> publicaciones</span>
+                                <span><b>15k</b> seguidores</span>
+                            </div>
+                            <a href="https://www.instagram.com/melanieetattoo" target="_blank" class="insta-follow-btn">Seguir en Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="insta-grid" id="insta-feed">
+                    <!-- Cargado por App.js -->
+                </div>
+            </div>
         </section>
 
         <!-- FLASHES -->
@@ -78,69 +102,39 @@
             <div class="flash-grid" id="flash-catalog"></div>
         </section>
 
-        <!-- COTIZADOR PREMIUM (REDISEÑADO) -->
+        <!-- COTIZADOR -->
         <section class="section" id="cotizador">
             <div class="quote-box-pro">
-                <div class="quote-header">
-                    <h2>Cotizador Inteligente</h2>
-                    <p>Configura tu proyecto para obtener un estimado detallado.</p>
-                </div>
-
+                <h2>Cotizador Inteligente</h2>
                 <div class="quote-body">
-                    <!-- Paso 1: Estilo -->
                     <div class="quote-step">
-                        <label>1. Selecciona el Estilo</label>
+                        <label>1. Estilo</label>
                         <div class="option-grid" id="style-options">
-                            <div class="option-card active" data-value="1" data-label="Fine Line">
-                                <span class="opt-icon">✒️</span>
-                                <span>Fine Line</span>
-                            </div>
-                            <div class="option-card" data-value="1.8" data-label="Sombreado">
-                                <span class="opt-icon">🌫️</span>
-                                <span>Sombreado</span>
-                            </div>
-                            <div class="option-card" data-value="3" data-label="Realismo">
-                                <span class="opt-icon">👁️</span>
-                                <span>Realismo</span>
-                            </div>
+                            <div class="option-card active" data-value="1"><span>Fine Line</span></div>
+                            <div class="option-card" data-value="1.8"><span>Sombreado</span></div>
+                            <div class="option-card" data-value="3"><span>Realismo</span></div>
                         </div>
                     </div>
-
-                    <!-- Paso 2: Zona -->
                     <div class="quote-step">
-                        <label>2. Zona del Cuerpo</label>
+                        <label>2. Zona</label>
                         <div class="option-grid" id="zone-options">
-                            <div class="option-card active" data-value="1" data-label="Extremidad">
-                                <span class="opt-icon">💪</span>
-                                <span>Brazo/Pierna</span>
-                            </div>
-                            <div class="option-card" data-value="1.5" data-label="Torso">
-                                <span class="opt-icon">👕</span>
-                                <span>Pecho/Espalda</span>
-                            </div>
-                            <div class="option-card" data-value="2" data-label="Compleja">
-                                <span class="opt-icon">⚠️</span>
-                                <span>Cuello/Costillas</span>
-                            </div>
+                            <div class="option-card active" data-value="1"><span>Extremidad</span></div>
+                            <div class="option-card" data-value="1.5"><span>Torso</span></div>
                         </div>
                     </div>
-
-                    <!-- Paso 3: Tamaño -->
                     <div class="quote-step">
                         <div style="display:flex; justify-content:space-between;">
-                            <label>3. Tamaño Aproximado</label>
-                            <b id="size-display" style="color:var(--primary);">10 cm</b>
+                            <label>3. Tamaño</label>
+                            <b id="size-display">10 cm</b>
                         </div>
                         <input type="range" id="size-slider" min="5" max="40" value="10" class="pro-slider">
                     </div>
-
-                    <!-- Resultado -->
                     <div class="quote-total-panel">
                         <div class="total-info">
-                            <span>Inversión Estimada</span>
+                            <span>Estimado</span>
                             <h3 id="price-estimate">$0</h3>
                         </div>
-                        <button class="booking-btn-gold" onclick="openBooking()">Solicitar Cita con Melanie</button>
+                        <button class="booking-btn-gold" onclick="openBooking()">Agendar con Melanie</button>
                     </div>
                 </div>
             </div>
@@ -151,10 +145,9 @@
             <div class="booking-card">
                 <h2>Reserva tu Espacio</h2>
                 <form class="contact-form-pro">
-                    <input type="text" placeholder="Nombre Completo">
-                    <input type="email" placeholder="Email de Contacto">
-                    <textarea placeholder="Cuéntale tu idea a Melanie..."></textarea>
-                    <button type="submit" class="booking-btn-gold">Enviar Solicitud de Cita</button>
+                    <input type="text" placeholder="Tu Nombre">
+                    <textarea placeholder="Describe tu idea..."></textarea>
+                    <button type="submit" class="booking-btn-gold">Enviar Solicitud</button>
                 </form>
             </div>
         </section>
