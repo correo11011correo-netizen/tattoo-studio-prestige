@@ -3,54 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MELANIE | Arte y Tatuaje de Alta Gama</title>
+    <title>MELANIE | Arte y Tatuaje Profesional</title>
+    <meta name="description" content="Portafolio oficial de Melanie. Tatuaje de autor y arte exclusivo.">
     
-    <meta name="description" content="Estudio de tatuaje de Melanie. Diseños de autor, exclusividad y arte eterno para coleccionistas.">
-    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
-
-    <!-- Pre-conectar para velocidad -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .header-logo { display: flex; align-items: center; gap: 15px; }
+        .svg-logo { width: 45px; height: 45px; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); }
+    </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-text">MELANIE</div>
+        <div class="header-logo">
+            <svg class="svg-logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 4L36 16H28L32 4Z" fill="#c5a059"/>
+                <rect x="31" y="16" width="2" height="44" fill="#c5a059"/>
+                <path d="M32 28C38 28 44 34 44 42C44 50 38 56 32 56C26 56 20 50 20 42C20 34 26 28 32 28Z" stroke="#c5a059" stroke-width="1.5"/>
+            </svg>
+            <div class="logo-text">MELANIE</div>
+        </div>
         <nav class="nav-links">
-            <a href="#filosofia">Sobre Mí</a>
-            <a href="#galeria">Galería</a>
+            <a href="#filosofia">Melanie</a>
+            <a href="#galeria">Obras</a>
             <a href="#flashes">Disponibles</a>
-            <a href="#cotizador">Presupuesto</a>
-            <a href="#contacto">Citas</a>
+            <a href="#cotizador">Cotizador Pro</a>
+            <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
     <main>
         <!-- HERO -->
         <section class="hero">
-            <div class="tagline">Arte en Piel por Melanie</div>
-            <h1>Legado y Permanencia</h1>
-            <a href="#galeria" class="booking-btn">Ver Colección</a>
+            <div class="tagline">Arte de Autor • Melanie</div>
+            <h1>Legado Inmortal</h1>
+            <a href="#galeria" class="booking-btn">Ver Colección Pro</a>
         </section>
 
         <!-- FILOSOFÍA -->
         <section class="section" id="filosofia">
             <div class="container">
-                <span class="sub-title">La Visión de Melanie</span>
-                <h2 class="title">No solo tatuajes.<br>Creaciones Eternas.</h2>
+                <span class="sub-title">La Artista</span>
+                <h2 class="title">Melanie: Maestría y Visión.</h2>
                 <p class="desc">
-                    Ubicado en un espacio de arte exclusivo, <b>Melanie Art Studio</b> es el destino para quienes buscan una expresión anatómica sin concesiones. Cada pieza es una obra maestra única diseñada por Melanie para fluir con el cuerpo, creada con precisión técnica y visión artística de élite.
+                    Especializada en piezas de alta complejidad, <b>Melanie</b> fusiona la anatomía humana con el arte eterno. Cada sesión es una experiencia personalizada en un entorno de máxima higiene y exclusividad.
                 </p>
             </div>
         </section>
 
-        <!-- GALERÍA FILTRABLE -->
+        <!-- GALERÍA -->
         <section class="section" id="galeria">
             <div class="section-header">
-                <h2>Obras de Melanie</h2>
+                <h2>Obras Seleccionadas</h2>
                 <div class="filter-bar">
                     <button class="filter-btn active" data-filter="all">Todos</button>
                     <button class="filter-btn" data-filter="realismo">Realismo</button>
@@ -58,49 +66,82 @@
                     <button class="filter-btn" data-filter="fineline">Fine Line</button>
                 </div>
             </div>
-            <div class="gallery-grid" id="main-gallery">
-                <!-- Cargado dinámicamente -->
-            </div>
+            <div class="gallery-grid" id="main-gallery" style="min-height: 500px;"></div>
         </section>
 
         <!-- FLASHES -->
         <section class="section grey-bg" id="flashes">
             <div class="section-header">
-                <h2>Diseños de Melanie</h2>
-                <p>Arte exclusivo listo para ser tatuado. Una sola sesión por pieza.</p>
+                <h2>Diseños Listos</h2>
+                <p>Proyectos exclusivos diseñados por Melanie para entrega inmediata.</p>
             </div>
-            <div class="flash-grid" id="flash-catalog">
-                <!-- Cargado dinámicamente -->
-            </div>
+            <div class="flash-grid" id="flash-catalog"></div>
         </section>
 
-        <!-- COTIZADOR -->
+        <!-- COTIZADOR PREMIUM (REDISEÑADO) -->
         <section class="section" id="cotizador">
-            <div class="quote-box">
-                <h2>Calculadora de Proyecto</h2>
-                <p>Obtén un presupuesto estimado para tu idea.</p>
-                <div class="quote-form">
-                    <div class="form-group">
-                        <label>Dimensión</label>
-                        <select id="size-select">
-                            <option value="80">Pequeño (2-5 cm)</option>
-                            <option value="200" selected>Mediano (10-15 cm)</option>
-                            <option value="500">Gran Formato (Manga/Espalda)</option>
-                        </select>
+            <div class="quote-box-pro">
+                <div class="quote-header">
+                    <h2>Cotizador Inteligente</h2>
+                    <p>Configura tu proyecto para obtener un estimado detallado.</p>
+                </div>
+
+                <div class="quote-body">
+                    <!-- Paso 1: Estilo -->
+                    <div class="quote-step">
+                        <label>1. Selecciona el Estilo</label>
+                        <div class="option-grid" id="style-options">
+                            <div class="option-card active" data-value="1" data-label="Fine Line">
+                                <span class="opt-icon">✒️</span>
+                                <span>Fine Line</span>
+                            </div>
+                            <div class="option-card" data-value="1.8" data-label="Sombreado">
+                                <span class="opt-icon">🌫️</span>
+                                <span>Sombreado</span>
+                            </div>
+                            <div class="option-card" data-value="3" data-label="Realismo">
+                                <span class="opt-icon">👁️</span>
+                                <span>Realismo</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Nivel de Detalle</label>
-                        <select id="complexity-select">
-                            <option value="1">Minimalista / Fine Line</option>
-                            <option value="1.8">Sombreado / Ilustrativo</option>
-                            <option value="3">Realismo / Hiper-detalle</option>
-                        </select>
+
+                    <!-- Paso 2: Zona -->
+                    <div class="quote-step">
+                        <label>2. Zona del Cuerpo</label>
+                        <div class="option-grid" id="zone-options">
+                            <div class="option-card active" data-value="1" data-label="Extremidad">
+                                <span class="opt-icon">💪</span>
+                                <span>Brazo/Pierna</span>
+                            </div>
+                            <div class="option-card" data-value="1.5" data-label="Torso">
+                                <span class="opt-icon">👕</span>
+                                <span>Pecho/Espalda</span>
+                            </div>
+                            <div class="option-card" data-value="2" data-label="Compleja">
+                                <span class="opt-icon">⚠️</span>
+                                <span>Cuello/Costillas</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="quote-result">
-                        <span>Inversión Estimada:</span>
-                        <h3 id="price-estimate">$0</h3>
+
+                    <!-- Paso 3: Tamaño -->
+                    <div class="quote-step">
+                        <div style="display:flex; justify-content:space-between;">
+                            <label>3. Tamaño Aproximado</label>
+                            <b id="size-display" style="color:var(--primary);">10 cm</b>
+                        </div>
+                        <input type="range" id="size-slider" min="5" max="40" value="10" class="pro-slider">
                     </div>
-                    <button class="booking-btn" onclick="openBooking()">Solicitar Cita con Melanie</button>
+
+                    <!-- Resultado -->
+                    <div class="quote-total-panel">
+                        <div class="total-info">
+                            <span>Inversión Estimada</span>
+                            <h3 id="price-estimate">$0</h3>
+                        </div>
+                        <button class="booking-btn-gold" onclick="openBooking()">Solicitar Cita con Melanie</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -108,23 +149,21 @@
         <!-- CONTACTO -->
         <section class="section" id="contacto">
             <div class="booking-card">
-                <h2>Inicia tu Proyecto</h2>
-                <p>Melanie atiende únicamente bajo cita previa selectiva.</p>
-                <form class="contact-form">
-                    <input type="text" placeholder="Tu Nombre">
-                    <input type="email" placeholder="Tu Email">
+                <h2>Reserva tu Espacio</h2>
+                <form class="contact-form-pro">
+                    <input type="text" placeholder="Nombre Completo">
+                    <input type="email" placeholder="Email de Contacto">
                     <textarea placeholder="Cuéntale tu idea a Melanie..."></textarea>
-                    <button type="submit" class="booking-btn">Enviar Mensaje</button>
+                    <button type="submit" class="booking-btn-gold">Enviar Solicitud de Cita</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        &copy; 2026 MELANIE ART STUDIO | EXCLUSIVIDAD . ARTE . TINTA
+        &copy; 2026 MELANIE ART & TATTOO STUDIO | DISEÑO DE AUTOR
     </footer>
 
-    <!-- JS al final para velocidad -->
-    <script src="./js/app.js" async></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>
