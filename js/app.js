@@ -1,84 +1,83 @@
 /**
- * 🖋️ MELANIE ART STUDIO | ENGINE v8.0 (WIZARD EDITION)
+ * 🖋️ MELANIE ART STUDIO | ENGINE v9.0 (RE-BORN)
  */
 
-let wizardData = {
-    style: 1,
-    zone: 1,
-    size: 10
+const works = [
+    { id: 1, img: 'https://images.unsplash.com/photo-1550537687-c91072c4792d?w=400' },
+    { id: 2, img: 'https://images.unsplash.com/photo-1590208701125-300174e30730?w=400' },
+    { id: 3, img: 'https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=400' },
+    { id: 4, img: 'https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=400' }
+];
+
+const instaThumbnails = [
+    'https://images.unsplash.com/photo-1594465919760-441fe5908ab0?w=200',
+    'https://images.unsplash.com/photo-1560707854-fb9a10eeaebb?w=200',
+    'https://images.unsplash.com/photo-1562158074-a6697be47820?w=200'
+];
+
+let wizardState = { style: 1, size: 10 };
+
+const init = () => {
+    // 1. Render Instagram Mini Grid
+    const instaContainer = document.getElementById('insta-feed');
+    instaThumbnails.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        instaContainer.appendChild(img);
+    });
+
+    // 2. Render Gallery
+    const galleryContainer = document.getElementById('main-gallery');
+    works.forEach(w => {
+        const div = document.createElement('div');
+        div.className = 'work-item';
+        div.innerHTML = `<img src="${w.img}" loading="lazy">`;
+        galleryContainer.appendChild(div);
+    });
+
+    // 3. Init Wizard
+    renderStep1();
 };
 
-const initApp = () => {
-    // --- GALERÍA ---
-    const works = [
-        { id: 1, tag: 'realismo', title: 'Mirada Noir', img: 'https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=800' },
-        { id: 2, tag: 'geometria', title: 'Fractal Sacro', img: 'https://images.unsplash.com/photo-1590208701125-300174e30730?w=800' },
-        { id: 3, tag: 'fineline', title: 'Trazo Etéreo', img: 'https://images.unsplash.com/photo-1550537687-c91072c4792d?w=800' }
-    ];
-
-    const container = document.getElementById('main-gallery');
-    if (container) {
-        works.forEach(w => {
-            const card = document.createElement('article');
-            card.className = 'art-card';
-            card.innerHTML = `<img src="${w.img}" alt="${w.title}"><div style="padding:15px; position:absolute; bottom:0; background:linear-gradient(transparent, #000); width:100%;"><small style="color:#c5a059;">${w.tag.toUpperCase()}</small><h4>${w.title}</h4></div>`;
-            container.appendChild(card);
-        });
-    }
-
-    console.log("Melanie Wizard Engine: Active.");
+const renderStep1 = () => {
+    const content = document.getElementById('step-content');
+    content.innerHTML = `
+        <h3 class="wiz-step-title">Estilo de Tatuaje</h3>
+        <div class="wiz-options">
+            <button class="wiz-opt-btn" onclick="setStep1(1)">Fine Line / Minimalista</button>
+            <button class="wiz-opt-btn" onclick="setStep1(2)">Realismo / Sombreado</button>
+            <button class="wiz-opt-btn" onclick="setStep1(3)">Geometría / Blackwork</button>
+        </div>
+    `;
 };
 
-// --- NAVEGACIÓN DEL WIZARD ---
-function nextStep(stepNum, key, value) {
-    if (key) wizardData[key] = value;
-    
-    // Actualizar UI
-    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-    
-    const targetStep = stepNum === 'result' ? 'step-result' : `step-${stepNum}`;
-    document.getElementById(targetStep).classList.add('active');
-    
-    // Actualizar Progreso
-    const progress = (stepNum === 'result') ? 100 : (stepNum * 25);
-    document.getElementById('progress-fill').style.width = `${progress}%`;
-}
+window.setStep1 = (val) => {
+    wizardState.style = val;
+    renderStep2();
+};
 
-function prevStep(stepNum) {
-    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-    document.getElementById(`step-${stepNum}`).classList.add('active');
-    document.getElementById('progress-fill').style.width = `${stepNum * 25}%`;
-}
+const renderStep2 = () => {
+    const content = document.getElementById('step-content');
+    content.innerHTML = `
+        <h3 class="wiz-step-title">Tamaño de la Pieza</h3>
+        <div class="wiz-options">
+            <button class="wiz-opt-btn" onclick="calculate(10)">Pequeño (10cm)</button>
+            <button class="wiz-opt-btn" onclick="calculate(20)">Mediano (20cm)</button>
+            <button class="wiz-opt-btn" onclick="calculate(30)">Grande (30cm+)</button>
+        </div>
+    `;
+};
 
-function updateWizSlider(val) {
-    wizardData.size = parseInt(val);
-    document.getElementById('val-display').innerText = `${val} cm`;
-}
+window.calculate = (size) => {
+    const price = (50 + (size * 10)) * wizardState.style;
+    const content = document.getElementById('step-content');
+    content.innerHTML = `
+        <div class="price-res">
+            <span>Inversión Estimada:</span>
+            <h2>$${Math.round(price)}</h2>
+            <button class="wiz-opt-btn" style="margin-top:20px; background:var(--primary); color:#000;" onclick="location.reload()">Reiniciar</button>
+        </div>
+    `;
+};
 
-function showFinalResult() {
-    // LÓGICA DE CÁLCULO PRO (Tiempo e Inversión)
-    const basePrice = 80;
-    const factorSize = wizardData.size * 6;
-    const totalInvestment = Math.round((basePrice + factorSize) * wizardData.style * wizardData.zone);
-    
-    // Estimación de tiempo (1h cada 5cm aprox, ajustado por complejidad)
-    const estimatedHours = Math.ceil((wizardData.size / 5) * (wizardData.style * 0.8));
-
-    document.getElementById('res-price').innerText = `$${totalInvestment}`;
-    document.getElementById('res-time').innerText = `${estimatedHours}h - ${estimatedHours + 2}h`;
-    
-    nextStep('result');
-}
-
-function resetWizard() {
-    wizardData = { style: 1, zone: 1, size: 10 };
-    document.getElementById('wiz-slider').value = 10;
-    document.getElementById('val-display').innerText = "10 cm";
-    nextStep(1);
-}
-
-function openBooking() {
-    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
-}
-
-initApp();
+document.addEventListener('DOMContentLoaded', init);
