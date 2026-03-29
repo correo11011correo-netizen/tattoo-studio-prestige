@@ -1,117 +1,138 @@
 :root {
-    --bg: #0f0f0f;
-    --card: #1a1a1a;
-    --primary: #d1b06b; /* Oro Champagne */
-    --text-main: #ffffff;
-    --text-sec: #a1a1a1;
-    --border: rgba(255, 255, 255, 0.1);
-    --accent-glow: rgba(209, 176, 107, 0.3);
-    --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --primary: #d1b06b;
+    --bg: #0a0a0a;
+    --card: #141414;
+    --text: #ffffff;
+    --dim: #888888;
+    --border: rgba(255,255,255,0.08);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
 body { 
     background-color: var(--bg); 
-    color: var(--text-main); 
-    font-family: 'Inter', sans-serif; 
-    line-height: 1.6;
+    color: var(--text); 
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
 }
 
-h1, h2, h3, .logo-text { font-family: 'Playfair Display', serif; font-weight: 700; }
-
-/* --- NAVEGACIÓN DE ALTO CONTRASTE --- */
-header { 
-    position: fixed; top: 0; width: 100%; padding: 20px 5%; 
-    display: flex; justify-content: space-between; align-items: center; 
-    z-index: 1000; background: rgba(15,15,15,0.95); 
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(10px);
+/* 1. CABECERA GIGANTE PERO LIMPIA */
+.main-header {
+    padding: 60px 20px;
+    text-align: center;
+}
+.logo { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 42px; 
+    letter-spacing: 5px; 
+    margin-bottom: 5px;
+}
+.tagline { 
+    font-size: 10px; 
+    letter-spacing: 4px; 
+    color: var(--primary); 
+    font-weight: 800;
 }
 
-.logo-text { font-size: 26px; letter-spacing: 3px; color: var(--primary); }
-
-.nav-links a { 
-    color: var(--text-main); text-decoration: none; font-size: 11px; 
-    font-weight: 700; margin-left: 30px; text-transform: uppercase; 
-    letter-spacing: 2px; transition: var(--transition);
+/* CONTENEDOR MÓVIL */
+.app-container {
+    max-width: 600px; /* Limita el ancho en PC para que en móvil se vea perfecto */
+    margin: 0 auto;
+    padding: 0 20px;
 }
-.nav-links a:hover { color: var(--primary); }
 
-/* --- HERO SECTION --- */
-.hero { 
-    height: 100vh; display: flex; flex-direction: column; 
-    justify-content: center; align-items: center; text-align: center;
-    background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 100%);
+.content-block {
+    margin-bottom: 80px;
 }
-.hero h1 { font-size: clamp(50px, 10vw, 110px); line-height: 1; margin-bottom: 20px; }
-.hero .tagline { color: var(--primary); font-size: 13px; letter-spacing: 8px; text-transform: uppercase; font-weight: 800; margin-bottom: 15px; }
 
-/* --- WIZARD SYSTEM (CONTRASTE MEJORADO) --- */
-.wizard-container { 
+/* 2. INSTAGRAM PROFILE MINIATURE */
+.insta-mini-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--card);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    margin-bottom: 15px;
+}
+.insta-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.insta-avatar img { width: 100%; height: 100%; border-radius: 50%; border: 3px solid var(--card); }
+.insta-info h3 { font-size: 18px; font-weight: 800; }
+.insta-info p { font-size: 12px; color: var(--dim); margin-bottom: 10px; }
+.insta-btn { 
+    display: inline-block; 
+    background: #0095f6; 
+    color: #fff; 
+    text-decoration: none; 
+    padding: 8px 15px; 
+    border-radius: 8px; 
+    font-size: 11px; 
+    font-weight: 800; 
+}
+
+.insta-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.insta-mini-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+/* 3. GALERÍA OPTIMIZADA */
+.section-title { margin-bottom: 30px; text-align: left; }
+.section-title span { color: var(--primary); font-size: 10px; font-weight: 800; letter-spacing: 3px; }
+.section-title h2 { font-size: 28px; font-family: 'Playfair Display', serif; }
+
+.work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas en móvil */
+    gap: 15px;
+}
+.work-item { 
+    background: var(--card); 
+    border-radius: 12px; 
+    overflow: hidden; 
+    border: 1px solid var(--border); 
+}
+.work-item img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+
+/* 4. SISTEMA DE PRESUPUESTOS (ABAJO) */
+.wizard-box {
+    background: #000;
+    border: 1px solid var(--primary);
+    border-radius: 25px;
+    padding: 30px;
+    margin-top: 20px;
+}
+.wiz-step-title { font-size: 20px; margin-bottom: 20px; text-align: center; }
+.wiz-options { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.wiz-opt-btn { 
     background: var(--card); 
     border: 1px solid var(--border); 
-    border-radius: 24px; padding: 50px; 
-    max-width: 850px; margin: 0 auto; 
-    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    color: #fff; 
+    padding: 15px; 
+    border-radius: 12px; 
+    font-size: 13px; 
+    font-weight: 600; 
+    cursor: pointer;
 }
+.wiz-opt-btn:active { background: var(--primary); color: #000; }
 
-.progress-bar { width: 100%; height: 3px; background: #222; margin: 30px 0; border-radius: 10px; overflow: hidden; }
-#progress-fill { height: 100%; background: var(--primary); transition: var(--transition); box-shadow: 0 0 15px var(--primary); }
+.price-res { text-align: center; padding: 20px 0; }
+.price-res h2 { font-size: 48px; color: var(--primary); font-family: monospace; }
 
-.step h3 { font-size: 32px; color: var(--text-main); margin-bottom: 35px; }
-
-.wizard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; width: 100%; }
-.wiz-card { 
-    background: #222; border: 1px solid var(--border); 
-    padding: 35px 20px; border-radius: 16px; color: #fff; 
-    cursor: pointer; transition: var(--transition);
-}
-.wiz-card:hover { border-color: var(--primary); background: #2a2a2a; transform: translateY(-3px); }
-.wiz-card.selected { border-color: var(--primary); box-shadow: 0 0 20px var(--accent-glow); }
-.wiz-icon { font-size: 32px; margin-bottom: 15px; display: block; }
-.wiz-card b { font-size: 15px; letter-spacing: 1px; }
-
-/* SLIDER */
-.slider-box h2 { font-size: 70px; color: var(--primary); margin-bottom: 15px; }
-input[type="range"] { width: 100%; height: 6px; background: #333; border-radius: 10px; appearance: none; }
-input[type="range"]::-webkit-slider-thumb { 
-    appearance: none; width: 32px; height: 32px; 
-    background: var(--primary); border-radius: 50%; 
-    border: 6px solid var(--bg); cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-
-/* RESULT CARD PRO */
-.result-card { 
-    background: #000; border: 1px solid var(--primary); 
-    padding: 40px; border-radius: 20px; text-align: center;
-}
-.res-main { display: flex; justify-content: space-around; margin: 30px 0; gap: 20px; }
-.res-item label { font-size: 10px; color: var(--text-sec); letter-spacing: 2px; text-transform: uppercase; }
-.res-item h2 { font-size: 56px; color: var(--primary); }
-.res-item h3 { font-size: 38px; color: #fff; }
-
-/* --- BOTONES PREMIUM --- */
-.booking-btn-gold { 
-    display: inline-block; padding: 20px 45px; 
-    background: var(--primary); color: #000; 
-    text-decoration: none; font-weight: 800; font-size: 12px; 
-    text-transform: uppercase; letter-spacing: 3px; 
-    border-radius: 4px; transition: var(--transition); border: none;
-}
-.booking-btn-gold:hover { 
-    background-color: #e2c285; transform: translateY(-2px); 
-    box-shadow: 0 10px 30px var(--accent-glow);
-}
-
-/* GALERÍA */
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
-.art-card { border-radius: 8px; border: 1px solid var(--border); overflow: hidden; }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .wizard-container { padding: 30px 20px; }
-    .nav-links { display: none; }
-    .res-main { flex-direction: column; }
+footer {
+    padding: 40px;
+    text-align: center;
+    font-size: 9px;
+    color: #333;
+    letter-spacing: 3px;
 }
