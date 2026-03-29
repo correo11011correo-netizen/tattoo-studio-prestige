@@ -2,167 +2,64 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MELANIE | Studio de Arte Permanente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MELANIE | Tatuaje de Autor</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        .header-logo { display: flex; align-items: center; gap: 15px; }
-        .svg-logo { width: 45px; height: 45px; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="header-logo">
-            <svg class="svg-logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M32 4L36 16H28L32 4Z" fill="#c5a059"/>
-                <rect x="31" y="16" width="2" height="44" fill="#c5a059"/>
-                <path d="M32 28C38 28 44 34 44 42C44 50 38 56 32 56C26 56 20 50 20 42C20 34 26 28 32 28Z" stroke="#c5a059" stroke-width="1.5"/>
-            </svg>
-            <div class="logo-text">MELANIE</div>
-        </div>
-        <nav class="nav-links">
-            <a href="#filosofia">Melanie</a>
-            <a href="#galeria">Obras</a>
-            <a href="#cotizador">Consultoría</a>
-            <a href="#contacto">Citas</a>
-        </nav>
+    <!-- 1. CABECERA -->
+    <header class="main-header">
+        <h1 class="logo">MELANIE</h1>
+        <p class="tagline">ESTUDIO DE TATUAJE PROFESIONAL</p>
     </header>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero">
-            <div class="tagline">Fine Art & High-End Tattooing</div>
-            <h1>Bespoke Ink Studio</h1>
-            <a href="#cotizador" class="booking-btn-gold">Iniciar Consultoría Digital</a>
-        </section>
-
-        <!-- FILOSOFÍA -->
-        <section class="section" id="filosofia">
-            <div class="container">
-                <span class="sub-title">Excelencia Técnica</span>
-                <h2 class="title">Melanie: Redefiniendo el Tatuaje de Autor.</h2>
-                <p class="desc">
-                    Cada trazo es una decisión consciente. <b>Melanie</b> combina la precisión quirúrgica con una sensibilidad artística única para crear piezas que trascienden el tiempo.
-                </p>
-            </div>
-        </section>
-
-        <!-- COTIZADOR WIZARD (EL CORAZÓN DEL SISTEMA) -->
-        <section class="section" id="cotizador">
-            <div class="wizard-container">
-                <div class="wizard-header">
-                    <h2>Consultoría de Proyecto</h2>
-                    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <main class="app-container">
+        
+        <!-- 2. INSTAGRAM PROFILE (DEBAJO DEL TÍTULO) -->
+        <section id="instagram-section" class="content-block">
+            <div class="insta-mini-profile">
+                <div class="insta-avatar">
+                    <img src="https://images.unsplash.com/photo-1594465919760-441fe5908ab0?w=100&h=100&fit=crop" alt="Melanie">
                 </div>
-
-                <div class="wizard-steps">
-                    <!-- PASO 1: ESTILO -->
-                    <div class="step active" id="step-1">
-                        <h3>¿Qué estilo buscas?</h3>
-                        <div class="wizard-grid">
-                            <button class="wiz-card" data-val="1" onclick="nextStep(2, 'style', 1)">
-                                <span class="wiz-icon">🖋️</span>
-                                <b>Fine Line</b>
-                                <small>Líneas finas y elegantes</small>
-                            </button>
-                            <button class="wiz-card" data-val="1.5" onclick="nextStep(2, 'style', 1.5)">
-                                <span class="wiz-icon">🌫️</span>
-                                <b>Blackwork</b>
-                                <small>Sombreado e ilustraciones</small>
-                            </button>
-                            <button class="wiz-card" data-val="2.5" onclick="nextStep(2, 'style', 2.5)">
-                                <span class="wiz-icon">👁️</span>
-                                <b>Realismo</b>
-                                <small>Máximo detalle y profundidad</small>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- PASO 2: UBICACIÓN -->
-                    <div class="step" id="step-2">
-                        <h3>¿Zona del cuerpo?</h3>
-                        <div class="wizard-grid">
-                            <button class="wiz-card" onclick="nextStep(3, 'zone', 1)">
-                                <span class="wiz-icon">💪</span>
-                                <b>Extremidades</b>
-                                <small>Brazos o Piernas</small>
-                            </button>
-                            <button class="wiz-card" onclick="nextStep(3, 'zone', 1.4)">
-                                <span class="wiz-icon">👕</span>
-                                <b>Torso Central</b>
-                                <small>Pecho o Espalda</small>
-                            </button>
-                            <button class="wiz-card" onclick="nextStep(3, 'zone', 1.8)">
-                                <span class="wiz-icon">🧠</span>
-                                <b>Zonas Sensibles</b>
-                                <small>Cuello, Manos o Costillas</small>
-                            </button>
-                        </div>
-                        <button class="back-link" onclick="prevStep(1)">← Volver</button>
-                    </div>
-
-                    <!-- PASO 3: TAMAÑO -->
-                    <div class="step" id="step-3">
-                        <h3>Escala del Proyecto</h3>
-                        <div class="slider-box">
-                            <h2 id="val-display">10 cm</h2>
-                            <input type="range" id="wiz-slider" min="5" max="50" value="10" oninput="updateWizSlider(this.value)">
-                            <div class="slider-labels"><span>Pequeño</span><span>Grande</span></div>
-                        </div>
-                        <button class="btn-pro" onclick="showFinalResult()">Calcular Estimación Final</button>
-                        <button class="back-link" onclick="prevStep(2)">← Volver</button>
-                    </div>
-
-                    <!-- RESULTADO FINAL -->
-                    <div class="step" id="step-result">
-                        <div class="result-card">
-                            <span class="res-tag">Resumen de Consultoría</span>
-                            <div class="res-main">
-                                <div class="res-item">
-                                    <label>Inversión Estimada</label>
-                                    <h2 id="res-price">$0</h2>
-                                </div>
-                                <div class="res-item">
-                                    <label>Sesión Aproximada</label>
-                                    <h3 id="res-time">--h</h3>
-                                </div>
-                            </div>
-                            <p class="res-note">Este es un presupuesto preliminar. Melanie validará cada detalle en la consulta personalizada.</p>
-                            <button class="booking-btn-gold" onclick="openBooking()">Solicitar Fecha con Melanie</button>
-                        </div>
-                        <button class="back-link" onclick="resetWizard()">Reiniciar Consultoría</button>
-                    </div>
+                <div class="insta-info">
+                    <h3>melanieetattoo</h3>
+                    <p>Artista • Diseño de Autor</p>
+                    <a href="https://www.instagram.com/melanieetattoo" target="_blank" class="insta-btn">Ver Perfil Completo</a>
                 </div>
             </div>
+            <!-- Grid de Instagram (Pequeño y optimizado) -->
+            <div class="insta-mini-grid" id="insta-feed"></div>
         </section>
 
-        <!-- GALERÍA -->
-        <section class="section" id="galeria">
-            <div class="section-header">
+        <!-- 3. GALERÍA DE EJEMPLOS (OBRAS) -->
+        <section id="gallery-section" class="content-block">
+            <div class="section-title">
+                <span>Colección</span>
                 <h2>Obras Seleccionadas</h2>
-                <div id="main-gallery" class="gallery-grid"></div>
+            </div>
+            <div class="work-grid" id="main-gallery"></div>
+        </section>
+
+        <!-- 4. SISTEMA DE PRESUPUESTOS (ABAJO DE TODO) -->
+        <section id="quote-section" class="content-block quote-bg">
+            <div class="wizard-mini">
+                <h2>Consultoría Digital</h2>
+                <p>Calcula el tiempo e inversión de tu proyecto</p>
+                
+                <div id="wizard-box" class="wizard-box">
+                    <!-- Paso actual cargado por JS -->
+                    <div id="step-content"></div>
+                </div>
             </div>
         </section>
 
-        <!-- CONTACTO -->
-        <section class="section" id="contacto">
-            <div class="booking-card">
-                <h2>Iniciar Conversación</h2>
-                <form class="contact-form-pro">
-                    <input type="text" placeholder="Nombre">
-                    <textarea placeholder="Cuéntale tu visión a Melanie..."></textarea>
-                    <button type="submit" class="booking-btn-gold">Enviar Solicitud</button>
-                </form>
-            </div>
-        </section>
     </main>
 
     <footer>
-        &copy; 2026 MELANIE ART STUDIO | EXCLUSIVIDAD . ARTE . PERMANENCIA
+        &copy; 2026 MELANIE TATTOO STUDIO
     </footer>
 
     <script src="./js/app.js"></script>
