@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master of Ink | Exclusive Tattoo Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #0a0a0a;
+            --grey: #1a1a1a;
+            --white: #ffffff;
+            --text-dim: #888888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--black); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
+
+        /* --- HEADER & NAVIGATION --- */
+        nav { padding: 40px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; background: linear-gradient(to bottom, var(--black), transparent); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; letter-spacing: 2px; }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* --- HERO SECTION --- */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 10vw, 120px); font-weight: 400; font-style: italic; line-height: 1; margin-bottom: 20px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1.2s forwards 0.5s; }
+        .hero p { font-size: 12px; letter-spacing: 8px; text-transform: uppercase; color: var(--gold); opacity: 0; animation: fadeInUp 1.2s forwards 0.8s; }
+
+        /* --- PHILOSOPHY --- */
+        .section { padding: 150px 10%; max-width: 1400px; margin: 0 auto; }
+        .section-header { margin-bottom: 80px; }
+        .section-header span { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 48px; margin-top: 10px; font-weight: 400; }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text { font-size: 18px; font-weight: 300; color: var(--text-dim); }
+        .about-text b { color: var(--white); font-weight: 400; }
+
+        /* --- GALLERY (Masonry Concept) --- */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
+        .gallery-item { position: relative; overflow: hidden; background: var(--grey); aspect-ratio: 4/5; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1); filter: grayscale(100%); }
+        .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0%); }
+        .gallery-item-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); opacity: 0; transition: opacity 0.5s; }
+        .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+        .gallery-item-overlay h3 { font-family: 'Playfair Display', serif; font-size: 20px; }
+
+        /* --- CONTACT / BOOKING --- */
+        .booking { background-color: var(--grey); padding: 100px 10%; text-align: center; border-radius: 50px 50px 0 0; }
+        .booking h2 { font-family: 'Playfair Display', serif; font-size: 60px; margin-bottom: 40px; }
+        .btn-gold { display: inline-block; padding: 20px 50px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; transition: all 0.4s; }
+        .btn-gold:hover { background: var(--gold); color: var(--black); }
+
+        footer { padding: 60px; text-align: center; border-top: 1px solid #1a1a1a; color: #444; font-size: 11px; letter-spacing: 2px; }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 60px; }
+            nav { padding: 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ELITE INK</div>
+        <div class="nav-links">
+            <a href="#about">Philosophy</a>
+            <a href="#work">Galleries</a>
+            <a href="#contact">Inquiries</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <p>The Art of Timeless Permanence</p>
+        <h1>The Tattoo Master</h1>
+    </section>
+
+    <section class="section" id="about">
+        <div class="about-grid">
+            <div class="section-header">
+                <span>About the Artist</span>
+                <h2>Crafting identity through art.</h2>
+            </div>
+            <div class="about-text">
+                <p>Ubicado en el epicentro del arte contemporáneo, <b>Elite Ink</b> representa la cúspide del tatuaje de autor. Cada pieza es una obra maestra irrepetible, diseñada para fusionarse con la anatomía y la esencia del cliente.</p>
+                <br>
+                <p>Nuestra filosofía se basa en la <b>exclusividad</b> y la <b>excelencia técnica</b>. No solo tatuamos, capturamos legados sobre la piel.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=800&q=80" alt="Work 1">
+                <div class="gallery-item-overlay"><h3>Noir Realism</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1590208701125-300174e30730?auto=format&fit=crop&w=800&q=80" alt="Work 2">
+                <div class="gallery-item-overlay"><h3>Geometry Alpha</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1550537687-c91072c4792d?auto=format&fit=crop&w=800&q=80" alt="Work 3">
+                <div class="gallery-item-overlay"><h3>Anatomic Flow</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=800&q=80" alt="Work 4">
+                <div class="gallery-item-overlay"><h3>Sacred Ink</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="contact">
+        <h2>Start your legacy.</h2>
+        <p style="margin-bottom: 40px; color: #666; letter-spacing: 2px;">Consultas solo bajo cita previa selectiva.</p>
+        <a href="#" class="btn-gold">Request Consultation</a>
+    </section>
+
+    <footer>
+        &copy; 2026 ELITE INK STUDIO | BEYOND THE SKIN
+    </footer>
+
+    <script>
+        // Animaciones sutiles al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section-header, .about-text, .gallery-item').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(40px)";
+            el.style.transition = "all 1s cubic-bezier(0.2, 1, 0.3, 1)";
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
