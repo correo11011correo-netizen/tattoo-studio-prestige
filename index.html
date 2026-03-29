@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAESTRÍA EN TINTA | Estudio de Tatuajes Boutique</title>
+    <title>MELANIE | Arte y Tatuaje de Alta Gama</title>
     
-    <meta name="description" content="Estudio de tatuaje de alto prestigio. Diseños de autor, exclusividad y arte eterno.">
-    <link rel="icon" type="image/png" href="./assets/icons/favicon.png">
+    <meta name="description" content="Estudio de tatuaje de Melanie. Diseños de autor, exclusividad y arte eterno para coleccionistas.">
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
 
-    <!-- Fuentes Premium -->
+    <!-- Pre-conectar para velocidad -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo-text">ELITE INK</div>
+        <div class="logo-text">MELANIE</div>
         <nav class="nav-links">
-            <a href="#filosofia">El Artista</a>
+            <a href="#filosofia">Sobre Mí</a>
             <a href="#galeria">Galería</a>
-            <a href="#flashes">Diseños Disponibles</a>
+            <a href="#flashes">Disponibles</a>
             <a href="#cotizador">Presupuesto</a>
             <a href="#contacto">Citas</a>
         </nav>
@@ -31,18 +31,18 @@
     <main>
         <!-- HERO -->
         <section class="hero">
-            <div class="tagline">Excelencia en cada trazo</div>
-            <h1>El Arte de lo Eterno</h1>
-            <a href="#galeria" class="booking-btn">Explorar Colección</a>
+            <div class="tagline">Arte en Piel por Melanie</div>
+            <h1>Legado y Permanencia</h1>
+            <a href="#galeria" class="booking-btn">Ver Colección</a>
         </section>
 
         <!-- FILOSOFÍA -->
         <section class="section" id="filosofia">
             <div class="container">
-                <span class="sub-title">Filosofía de Autor</span>
-                <h2 class="title">No solo tatuamos.<br>Capturamos legados.</h2>
+                <span class="sub-title">La Visión de Melanie</span>
+                <h2 class="title">No solo tatuajes.<br>Creaciones Eternas.</h2>
                 <p class="desc">
-                    Ubicado en el epicentro del arte contemporáneo, <b>Elite Ink</b> es el destino para quienes buscan una expresión anatómica sin concesiones. Cada pieza es una obra maestra única diseñada para fluir con el cuerpo, creada con la precisión de un maestro y la visión de un artista de élite.
+                    Ubicado en un espacio de arte exclusivo, <b>Melanie Art Studio</b> es el destino para quienes buscan una expresión anatómica sin concesiones. Cada pieza es una obra maestra única diseñada por Melanie para fluir con el cuerpo, creada con precisión técnica y visión artística de élite.
                 </p>
             </div>
         </section>
@@ -50,7 +50,7 @@
         <!-- GALERÍA FILTRABLE -->
         <section class="section" id="galeria">
             <div class="section-header">
-                <h2>Colección de Obras</h2>
+                <h2>Obras de Melanie</h2>
                 <div class="filter-bar">
                     <button class="filter-btn active" data-filter="all">Todos</button>
                     <button class="filter-btn" data-filter="realismo">Realismo</button>
@@ -59,49 +59,48 @@
                 </div>
             </div>
             <div class="gallery-grid" id="main-gallery">
-                <!-- Los items se cargan por JS -->
+                <!-- Cargado dinámicamente -->
             </div>
         </section>
 
-        <!-- CATÁLOGO DE FLASHES (VENTA) -->
+        <!-- FLASHES -->
         <section class="section grey-bg" id="flashes">
             <div class="section-header">
-                <h2>Flashes Disponibles</h2>
-                <p>Diseños exclusivos listos para ser tatuados. Una sola sesión por diseño.</p>
+                <h2>Diseños de Melanie</h2>
+                <p>Arte exclusivo listo para ser tatuado. Una sola sesión por pieza.</p>
             </div>
             <div class="flash-grid" id="flash-catalog">
-                <!-- Items de venta cargados por JS -->
+                <!-- Cargado dinámicamente -->
             </div>
         </section>
 
-        <!-- COTIZADOR INTELIGENTE -->
+        <!-- COTIZADOR -->
         <section class="section" id="cotizador">
             <div class="quote-box">
-                <h2>Cotizador Express</h2>
-                <p>Obtén un estimado inmediato para tu próxima pieza.</p>
-                
+                <h2>Calculadora de Proyecto</h2>
+                <p>Obtén un presupuesto estimado para tu idea.</p>
                 <div class="quote-form">
                     <div class="form-group">
-                        <label>Tamaño Aproximado</label>
+                        <label>Dimensión</label>
                         <select id="size-select">
-                            <option value="50">Pequeño (2-5 cm)</option>
-                            <option value="150" selected>Mediano (10-15 cm)</option>
-                            <option value="400">Grande (Pieza completa / Manga)</option>
+                            <option value="80">Pequeño (2-5 cm)</option>
+                            <option value="200" selected>Mediano (10-15 cm)</option>
+                            <option value="500">Gran Formato (Manga/Espalda)</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Complejidad</label>
+                        <label>Nivel de Detalle</label>
                         <select id="complexity-select">
-                            <option value="1">Minimalista / Solo líneas</option>
-                            <option value="1.5">Sombreado / Detalle medio</option>
-                            <option value="2.5">Realismo Pro / Hiper-detalle</option>
+                            <option value="1">Minimalista / Fine Line</option>
+                            <option value="1.8">Sombreado / Ilustrativo</option>
+                            <option value="3">Realismo / Hiper-detalle</option>
                         </select>
                     </div>
                     <div class="quote-result">
-                        <span>Estimado:</span>
+                        <span>Inversión Estimada:</span>
                         <h3 id="price-estimate">$0</h3>
                     </div>
-                    <button class="booking-btn" onclick="openBooking()">Reservar Consulta</button>
+                    <button class="booking-btn" onclick="openBooking()">Solicitar Cita con Melanie</button>
                 </div>
             </div>
         </section>
@@ -109,22 +108,23 @@
         <!-- CONTACTO -->
         <section class="section" id="contacto">
             <div class="booking-card">
-                <h2>Inicia tu Legado</h2>
-                <p>Consultas exclusivas bajo cita previa selectiva.</p>
+                <h2>Inicia tu Proyecto</h2>
+                <p>Melanie atiende únicamente bajo cita previa selectiva.</p>
                 <form class="contact-form">
-                    <input type="text" placeholder="Nombre Completo">
-                    <input type="email" placeholder="Email de Contacto">
-                    <textarea placeholder="Describe tu idea..."></textarea>
-                    <button type="submit" class="booking-btn">Enviar Solicitud</button>
+                    <input type="text" placeholder="Tu Nombre">
+                    <input type="email" placeholder="Tu Email">
+                    <textarea placeholder="Cuéntale tu idea a Melanie..."></textarea>
+                    <button type="submit" class="booking-btn">Enviar Mensaje</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        &copy; 2026 ELITE INK STUDIO | ARTE . PRESTIGIO . PERMANENCIA
+        &copy; 2026 MELANIE ART STUDIO | EXCLUSIVIDAD . ARTE . TINTA
     </footer>
 
-    <script src="./js/app.js"></script>
+    <!-- JS al final para velocidad -->
+    <script src="./js/app.js" async></script>
 </body>
 </html>
